@@ -202,7 +202,7 @@ var app = new Vue({
             if (this.cart.length > 0) {
 
                 if (this.paymethod.length <= 0) {
-                    alert('Por favor seleccione un método de pago');
+                    alert('Please select a payment method');
                 }else{
                     const totalp = this.cart.map(element => element.price * element.qty).reduce((a, b) => a + b, 0);
                     this.order.push({
@@ -231,7 +231,7 @@ var app = new Vue({
                     this.cancel();
                 }
             }else{
-                alert('No hay productos en el carrito, por favor agregue al menos uno');
+                alert('The cart is empty, please add at least one product');
             }
         },
         delFromCart(index){
@@ -254,7 +254,7 @@ var app = new Vue({
                 this.ptrigger = 0;
                 this.paymethod = '';
             }else{
-                alert('No hay productos en el carrito, por favor agregue al menos uno');
+                alert('The cart is empty, please add at least one product');
                 const total = this.cart.map(element => element.price * element.qty).reduce((a, b) => a + b, 0);
                 this.totalCart = new Intl.NumberFormat('es-ES', {style: 'currency',currency: 'COP', minimumFractionDigits: 0}).format(total);
             }
