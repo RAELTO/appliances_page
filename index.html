@@ -98,20 +98,19 @@
                     </div>
                     <div class="row"> <!--Filter -->
                         <div class="col-lg-6 col-md-4 text-center">
-                            <select class="form-select"  v-model="foption">
-                                <option value="1">TV</option>
-                                <option value="2">Fridges</option>
-                                <option value="3">Washing Machines</option>
-                                <option value="4">Fryers</option>
+                            <h4>Filters</h4>
+                            <select class="form-select"  v-model="foption" @change="filter">
+                                <option value="all">Show all</option>
+                                <option value="tvs">TV</option>
+                                <option value="frdg">Fridges</option>
+                                <option value="wm">Washing Machines</option>
+                                <option value="fry">Fryers</option>
                             </select>
-                        </div>
-                        <div class="col-lg-3 col-md-3">
-                            <button @click="filter" class="btn btn-dark fbtn">Apply Filter</button>
                         </div>
                     </div>
                     <!-- products & modals-->
                     <div class="row" v-if="products.length">
-                        <div class="col-md-6 col-lg-3 mt-3 mb-4" v-for="(item, index) in products" :key="item.id">
+                        <div class="col-md-6 col-lg-3 mt-3 mb-4" v-for="(item, index) in fproducts" :key="item.id">
                             <div class="card">
                                 <img :src="item.img" class="card-img-top" alt="pr1" data-bs-toggle="modal" :data-bs-target="item.modalw">
                                 <div class="card-body">

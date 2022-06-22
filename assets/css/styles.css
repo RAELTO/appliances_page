@@ -62,16 +62,6 @@ header{
     color: #000;
 }
 
-#products .fbtn{
-    border: 2px solid #000;
-    color: #000;
-    background-color: #fff;
-}
-
-#products .fbtn:hover{
-    color: #fff;
-    background-color: #000;
-}
 
 #products hr{
     color: #000;

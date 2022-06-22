@@ -113,6 +113,7 @@ var app = new Vue({
                 order_amount: 1,
             },
         ],
+        fproducts: [],
         cart: [],//empty array that will store the client's orders
         order: [],
         totalCart: 0,
@@ -276,8 +277,7 @@ var app = new Vue({
                 const total = this.cart.map(element => element.price * element.qty).reduce((a, b) => a + b, 0);
                 this.totalCart = new Intl.NumberFormat('es-ES', {style: 'currency',currency: 'COP', minimumFractionDigits: 0}).format(total);
                 //alert('Su pedido fue cancelado satisfactoriamente');
-                this.hb.forEach(element => element.order_amount = 1);
-                this.hd.forEach(element => element.order_amount = 1);
+                this.products.forEach(element => element.order_amount = 1);
                 this.fcartN = '';
                 this.ptrigger = 0;
                 this.paymethod = '';
@@ -288,7 +288,16 @@ var app = new Vue({
             }
         },
         filter(){
+            if (this.foption === 'all') {
+                this.fproducts = this.products;
+            }else{
+                const result = this.products.filter(e => e.category === this.foption);
+                this.fproducts = result;
+            }
             
         }
+    },
+    beforeMount(){
+        this.fproducts = this.products;
     }
 });
