@@ -97,16 +97,15 @@
                         </div>
                     </div>
                     <div class="row"> <!--Filter -->
-                        <div class="col-lg-6 text-center">
-                            <select class="form-select" aria-label="Default select example" v-model="foption">
-                                <option selected>Filter</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                                <option value="4">Four</option>
+                        <div class="col-lg-6 col-md-4 text-center">
+                            <select class="form-select"  v-model="foption">
+                                <option value="1">TV</option>
+                                <option value="2">Fridges</option>
+                                <option value="3">Washing Machines</option>
+                                <option value="4">Fryers</option>
                             </select>
                         </div>
-                        <div class="col-lg-3">
+                        <div class="col-lg-3 col-md-3">
                             <button @click="filter" class="btn btn-dark fbtn">Apply Filter</button>
                         </div>
                     </div>
