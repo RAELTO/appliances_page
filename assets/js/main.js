@@ -3,11 +3,6 @@
 var app = new Vue({
     el: '#app',
     data: {
-        products: [
-            {
-
-            }
-        ],
         hb: [
             {
                 id: 1,
@@ -18,7 +13,6 @@ var app = new Vue({
                 Placeat voluptatibus sapiente aliquid deleniti, rem nisi!
                 `,
                 price: 1_800_000,
-                idm: 1,
                 modal_id: 'hb1',
                 modalw: '#hb1',
                 order_amount: 1,
@@ -32,7 +26,6 @@ var app = new Vue({
                 Placeat voluptatibus sapiente aliquid deleniti, rem nisi!
                 `,
                 price: 1_900_000,
-                idm: 2,
                 modal_id: 'hb2',
                 modalw: '#hb2',
                 order_amount: 1,
@@ -46,7 +39,6 @@ var app = new Vue({
                 Placeat voluptatibus sapiente aliquid deleniti, rem nisi! 
                 `,
                 price: 2_600_000,
-                idm: 3,
                 modal_id: 'hb3',
                 modalw: '#hb3',
                 order_amount: 1,
@@ -60,61 +52,54 @@ var app = new Vue({
                 Placeat voluptatibus sapiente aliquid deleniti, rem nisi! 
                 `,
                 price: 1_980_000,
-                idm: 4,
                 modal_id: 'hb4',
                 modalw: '#hb4',
                 order_amount: 1,
             },
-        ],
-        hd: [
             {
-                id: 1,
+                id: 5,
                 img: './assets/images/fry1.png',
                 name: 'Fryer 1',
                 desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat amet`,
                 descmodal: `Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                 Placeat voluptatibus sapiente aliquid deleniti, rem nisi!`,
                 price: 25000,
-                idm: 1,
                 modal_id: 'hd1',
                 modalw: '#hd1',
                 order_amount: 1,
             },
             {
-                id: 2,
+                id: 6,
                 img: './assets/images/fry2.jpg',
                 name: 'Fryer 2',
                 desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat amet`,
                 descmodal: `Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                 Placeat voluptatibus sapiente aliquid deleniti, rem nisi!`,
                 price: 25000,
-                idm: 2,
                 modal_id: 'hd2',
                 modalw: '#hd2',
                 order_amount: 1,
             },
             {
-                id: 3,
+                id: 7,
                 img: './assets/images/tv1.jpg',
                 name: 'Smart TV 1',
                 desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat amet`,
                 descmodal: `Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                 Placeat voluptatibus sapiente aliquid deleniti, rem nisi!`,
                 price: 25000,
-                idm: 3,
                 modal_id: 'hd3',
                 modalw: '#hd3',
                 order_amount: 1,
             },
             {
-                id: 4,
+                id: 8,
                 img: './assets/images/tv2.jpg',
                 name: 'Smart TV 2',
                 desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat amet`,
                 descmodal: `Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                 Placeat voluptatibus sapiente aliquid deleniti, rem nisi!`,
                 price: 25000,
-                idm: 4,
                 modal_id: 'hd4',
                 modalw: '#hd4',
                 order_amount: 1,
