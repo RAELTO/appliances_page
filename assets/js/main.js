@@ -5,116 +5,113 @@ var app = new Vue({
     data: {
         products: [
             {
-                wms: [
-                    {
-                        id: 1,
-                        img: './assets/images/wm1.jpg',
-                        name: 'Washing Machine 1',
-                        desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat amet`,
-                        descmodal: `Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Placeat voluptatibus sapiente aliquid deleniti, rem nisi!
-                        `,
-                        price: 1_800_000,
-                        modal_id: 'wm1',
-                        modalw: '#wm1',
-                        order_amount: 1,
-                    },
-                    {
-                        id: 2,
-                        img: './assets/images/wm2.jpg',
-                        name: 'Washing Machine 2',
-                        desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat amet`,
-                        descmodal: `Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Placeat voluptatibus sapiente aliquid deleniti, rem nisi!
-                        `,
-                        price: 1_900_000,
-                        modal_id: 'wm2',
-                        modalw: '#wm2',
-                        order_amount: 1,
-                    },
-                ],
-                fridges: [
-                    {
-                        id: 3,
-                        img: './assets/images/frid1.jpg',
-                        name: 'Fridge 1',
-                        desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat amet`,
-                        descmodal: `Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Placeat voluptatibus sapiente aliquid deleniti, rem nisi! 
-                        `,
-                        price: 2_600_000,
-                        modal_id: 'frd1',
-                        modalw: '#frd1',
-                        order_amount: 1,
-                    },
-                    {
-                        id: 4,
-                        img: './assets/images/frid2.jpeg',
-                        name: 'Fridge 2',
-                        desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat amet`,
-                        descmodal: `Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Placeat voluptatibus sapiente aliquid deleniti, rem nisi! 
-                        `,
-                        price: 1_980_000,
-                        modal_id: 'frd2',
-                        modalw: '#frd2',
-                        order_amount: 1,
-                    },
-                ],
-                tvs: [
-                    {
-                        id: 7,
-                        img: './assets/images/tv1.jpg',
-                        name: 'Smart TV 1',
-                        desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat amet`,
-                        descmodal: `Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Placeat voluptatibus sapiente aliquid deleniti, rem nisi!`,
-                        price: 2_300_000,
-                        modal_id: 'tv1',
-                        modalw: '#tv1',
-                        order_amount: 1,
-                    },
-                    {
-                        id: 8,
-                        img: './assets/images/tv2.jpg',
-                        name: 'Smart TV 2',
-                        desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat amet`,
-                        descmodal: `Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Placeat voluptatibus sapiente aliquid deleniti, rem nisi!`,
-                        price: 2_500_000,
-                        modal_id: 'tv2',
-                        modalw: '#tv2',
-                        order_amount: 1,
-                    },
-                ],
-                fryers: [
-                    {
-                        id: 5,
-                        img: './assets/images/fry1.png',
-                        name: 'Fryer 1',
-                        desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat amet`,
-                        descmodal: `Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Placeat voluptatibus sapiente aliquid deleniti, rem nisi!`,
-                        price: 350_000,
-                        modal_id: 'fry1',
-                        modalw: '#fry1',
-                        order_amount: 1,
-                    },
-                    {
-                        id: 6,
-                        img: './assets/images/fry2.jpg',
-                        name: 'Fryer 2',
-                        desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat amet`,
-                        descmodal: `Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Placeat voluptatibus sapiente aliquid deleniti, rem nisi!`,
-                        price: 685_000,
-                        modal_id: 'fry2',
-                        modalw: '#fry2',
-                        order_amount: 1,
-                    },
-                ]
-
-            }
+                id: 1,
+                category: 'wm',
+                img: './assets/images/wm1.jpg',
+                name: 'Washing Machine 1',
+                desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat amet`,
+                descmodal: `Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Placeat voluptatibus sapiente aliquid deleniti, rem nisi!
+                `,
+                price: 1_800_000,
+                modal_id: 'wm1',
+                modalw: '#wm1',
+                order_amount: 1,
+            },
+            {
+                id: 2,
+                category: 'wm',
+                img: './assets/images/wm2.jpg',
+                name: 'Washing Machine 2',
+                desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat amet`,
+                descmodal: `Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Placeat voluptatibus sapiente aliquid deleniti, rem nisi!
+                `,
+                price: 1_900_000,
+                modal_id: 'wm2',
+                modalw: '#wm2',
+                order_amount: 1,
+            },
+            {
+                id: 3,
+                category: 'frdg',
+                img: './assets/images/frid1.jpg',
+                name: 'Fridge 1',
+                desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat amet`,
+                descmodal: `Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Placeat voluptatibus sapiente aliquid deleniti, rem nisi! 
+                `,
+                price: 2_600_000,
+                modal_id: 'frd1',
+                modalw: '#frd1',
+                order_amount: 1,
+            },
+            {
+                id: 4,
+                category: 'frdg',
+                img: './assets/images/frid2.jpeg',
+                name: 'Fridge 2',
+                desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat amet`,
+                descmodal: `Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Placeat voluptatibus sapiente aliquid deleniti, rem nisi! 
+                `,
+                price: 1_980_000,
+                modal_id: 'frd2',
+                modalw: '#frd2',
+                order_amount: 1,
+            },
+            {
+                id: 5,
+                category: 'fry',
+                img: './assets/images/fry1.png',
+                name: 'Fryer 1',
+                desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat amet`,
+                descmodal: `Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Placeat voluptatibus sapiente aliquid deleniti, rem nisi!`,
+                price: 350_000,
+                modal_id: 'fry1',
+                modalw: '#fry1',
+                order_amount: 1,
+            },
+            {
+                id: 6,
+                category: 'fry',
+                img: './assets/images/fry2.jpg',
+                name: 'Fryer 2',
+                desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat amet`,
+                descmodal: `Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Placeat voluptatibus sapiente aliquid deleniti, rem nisi!`,
+                price: 685_000,
+                modal_id: 'fry2',
+                modalw: '#fry2',
+                order_amount: 1,
+            },
+            {
+                id: 7,
+                category: 'tvs',
+                img: './assets/images/tv1.jpg',
+                name: 'Smart TV 1',
+                desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat amet`,
+                descmodal: `Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Placeat voluptatibus sapiente aliquid deleniti, rem nisi!`,
+                price: 2_300_000,
+                modal_id: 'tv1',
+                modalw: '#tv1',
+                order_amount: 1,
+            },
+            {
+                id: 8,
+                category: 'tvs',
+                img: './assets/images/tv2.jpg',
+                name: 'Smart TV 2',
+                desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat amet`,
+                descmodal: `Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Placeat voluptatibus sapiente aliquid deleniti, rem nisi!`,
+                price: 2_500_000,
+                modal_id: 'tv2',
+                modalw: '#tv2',
+                order_amount: 1,
+            },
         ],
         cart: [],//empty array that will store the client's orders
         order: [],

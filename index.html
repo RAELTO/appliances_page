@@ -111,7 +111,7 @@
                     </div>
                     <!-- products & modals-->
                     <div class="row" v-if="products.length">
-                        <div class="col-md-6 col-lg-3 mt-3 mb-4" v-for="(item, index) in products[0].wms" :key="item.id">
+                        <div class="col-md-6 col-lg-3 mt-3 mb-4" v-for="(item, index) in products" :key="item.id">
                             <div class="card">
                                 <img :src="item.img" class="card-img-top" alt="pr1" data-bs-toggle="modal" :data-bs-target="item.modalw">
                                 <div class="card-body">
