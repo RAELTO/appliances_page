@@ -35,7 +35,7 @@
                                     <a class="nav-link active" aria-current="page" href="#allpr">Products</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a @click="cartClick" class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#cart">Cart <i class="fas fa-shopping-cart"></i> <strong v-text="fcartN" class="text-light"></strong></a>
+                                    <a @click="cartClick" class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#cart">Cart <i class="fas fa-shopping-cart"></i> <strong v-text="fcartN" class="text-primary"></strong></a>
                                 </li>
                             </ul>
                         </div>
@@ -82,7 +82,7 @@
             <section id="floating-cart-btn">
                 <div class="btn-container fixed-bottom">
                     <div class="cart-float-btn">
-                        <a @click="cartClick" href="#" class="floating-cart text-center" data-bs-toggle="modal" data-bs-target="#cart"><i class="fas fa-shopping-cart"></i>  <strong v-text="fcartN" class="text-danger"></strong></a>
+                        <a @click="cartClick" href="#" class="floating-cart text-center" data-bs-toggle="modal" data-bs-target="#cart"><i class="fas fa-shopping-cart"></i>  <strong v-text="fcartN" class="text-primary"></strong></a>
                     </div>
                 </div>
             </section>
