@@ -108,9 +108,9 @@
                         </div>
                     </div>
                     <!-- products & modals-->
-                    <div class="row" v-if="hb.length">
-                        <div class="col-md-6 col-lg-3 mt-3 mb-4" v-for="(item, index) in hb" :key="item.id">
-                            <div class="card" >
+                    <div class="row" v-if="products.length">
+                        <div class="col-md-6 col-lg-3 mt-3 mb-4" v-for="(item, index) in products" :key="item.id">
+                            <div class="card">
                                 <img :src="item.img" class="card-img-top" alt="pr1" data-bs-toggle="modal" :data-bs-target="item.modalw">
                                 <div class="card-body">
                                     <h5 class="card-title" v-text="item.name">title</h5>
@@ -162,7 +162,7 @@
             <!-- /products -->
                         
             <!-- Modals -->
-            <section id="modals" v-if="hb.length && hb.length"> 
+            <section id="modals" v-if="products.length"> 
 
                 <!-- Modal Carrito -->
                 <div class="modal fade" id="carrito" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

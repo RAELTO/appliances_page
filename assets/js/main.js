@@ -3,7 +3,7 @@
 var app = new Vue({
     el: '#app',
     data: {
-        hb: [
+        products: [
             {
                 id: 1,
                 img: './assets/images/wm1.jpg',
@@ -13,8 +13,8 @@ var app = new Vue({
                 Placeat voluptatibus sapiente aliquid deleniti, rem nisi!
                 `,
                 price: 1_800_000,
-                modal_id: 'hb1',
-                modalw: '#hb1',
+                modal_id: 'wm1',
+                modalw: '#wm1',
                 order_amount: 1,
             },
             {
@@ -26,8 +26,8 @@ var app = new Vue({
                 Placeat voluptatibus sapiente aliquid deleniti, rem nisi!
                 `,
                 price: 1_900_000,
-                modal_id: 'hb2',
-                modalw: '#hb2',
+                modal_id: 'wm2',
+                modalw: '#wm2',
                 order_amount: 1,
             },
             {
@@ -39,8 +39,8 @@ var app = new Vue({
                 Placeat voluptatibus sapiente aliquid deleniti, rem nisi! 
                 `,
                 price: 2_600_000,
-                modal_id: 'hb3',
-                modalw: '#hb3',
+                modal_id: 'frd1',
+                modalw: '#frd1',
                 order_amount: 1,
             },
             {
@@ -52,8 +52,8 @@ var app = new Vue({
                 Placeat voluptatibus sapiente aliquid deleniti, rem nisi! 
                 `,
                 price: 1_980_000,
-                modal_id: 'hb4',
-                modalw: '#hb4',
+                modal_id: 'frd2',
+                modalw: '#frd2',
                 order_amount: 1,
             },
             {
@@ -64,8 +64,8 @@ var app = new Vue({
                 descmodal: `Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                 Placeat voluptatibus sapiente aliquid deleniti, rem nisi!`,
                 price: 25000,
-                modal_id: 'hd1',
-                modalw: '#hd1',
+                modal_id: 'fry1',
+                modalw: '#fry1',
                 order_amount: 1,
             },
             {
@@ -76,8 +76,8 @@ var app = new Vue({
                 descmodal: `Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                 Placeat voluptatibus sapiente aliquid deleniti, rem nisi!`,
                 price: 25000,
-                modal_id: 'hd2',
-                modalw: '#hd2',
+                modal_id: 'fry2',
+                modalw: '#fry2',
                 order_amount: 1,
             },
             {
@@ -88,8 +88,8 @@ var app = new Vue({
                 descmodal: `Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                 Placeat voluptatibus sapiente aliquid deleniti, rem nisi!`,
                 price: 25000,
-                modal_id: 'hd3',
-                modalw: '#hd3',
+                modal_id: 'tv1',
+                modalw: '#tv1',
                 order_amount: 1,
             },
             {
@@ -100,8 +100,8 @@ var app = new Vue({
                 descmodal: `Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                 Placeat voluptatibus sapiente aliquid deleniti, rem nisi!`,
                 price: 25000,
-                modal_id: 'hd4',
-                modalw: '#hd4',
+                modal_id: 'tv2',
+                modalw: '#tv2',
                 order_amount: 1,
             },
         ],
@@ -285,42 +285,8 @@ var app = new Vue({
                 this.totalCart = new Intl.NumberFormat('es-ES', {style: 'currency',currency: 'COP', minimumFractionDigits: 0}).format(total);
             }
         },
-        login(){
-
-            if (this.userinput.length > 0 && this.passinput.length > 0) {
-                const index = this.employees.findIndex((object) => {
-                    return object.id == this.userinput;
-                });
-    
-                if(index != -1 && this.passinput === this.employees[index].password){
-                    this.modaltrigger = 1;
-                    this.logspan = 0;
-                }else{
-                    this.logspan = 1;
-                }
-            }else{
-                this.logspan = 2;
-            }
-
-        },
-        closelogin(){
-            this.logspan = 0;
-            this.userinput = '';
-            this.passinput = '';
-        },
-        chefbtn(index){
-            this.order[index].statusChef = 'Completado';
-        },
-        waiterbtn(index){
-            this.order[index].statusWaiter = 'Entregado';
-        },
-        logout(){
-            if (confirm("¿Esta seguro de que desea cerrar sesión?") === true){
-                this.modaltrigger = 0;
-                this.logspan = 0;
-                this.userinput = '';
-                this.passinput = '';
-            }
+        filter(){
+            console.log();
         }
     }
 });
