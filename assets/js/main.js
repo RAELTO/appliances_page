@@ -120,7 +120,6 @@ var app = new Vue({
         //variables below
         fcartN: '',
         modaltrigger: 0,
-        logspan: 0,
         foption: '',
         ptrigger: 0,
         paymethod: '',
@@ -195,30 +194,6 @@ var app = new Vue({
         },
         cancelpurchase(){
             if (confirm("Do you want to cancel your purchase?") === true){
-                /*const totalc = this.cart.map(element => element.price * element.qty).reduce((a, b) => a + b, 0);
-                this.order.push({
-                    id: this.order.length + 1,
-                    order: [],
-                    statusChef: 'Cancelado',
-                    statusWaiter: 'Cancelado',
-                    totalp: 0,
-                    statusAdmin: 'Cancelado',
-                    totalc: totalc,
-                });
-
-                const prodqty = this.cart.map(e => {
-                    return{
-                        prod: e.prod,
-                        qty: e.qty
-                    }
-                });
-
-                this.order[this.order.length - 1].order = prodqty;
-                if (this.order[this.order.length - 1].statusAdmin === 'Cancelado') {
-                    this.totalcancelled += 1;
-                }
-                const sumtotals = this.order.map(element => element.totalc).reduce((a, b) => a + b, 0);
-                this.nonsold = new Intl.NumberFormat('es-ES', {style: 'currency',currency: 'COP', minimumFractionDigits: 0}).format(sumtotals);*/
                 alert('Your purchase order has been successfully cancelled');
                 this.cancel();
             }
@@ -233,8 +208,6 @@ var app = new Vue({
                     this.order.push({
                         id: this.order.length + 1,
                         order: [],
-                        statusChef: 'Pendiente',
-                        statusWaiter: 'Pendiente',
                         totalp: totalp,
                         statusAdmin: 'Pagado',
                         totalc: 0,
@@ -253,8 +226,8 @@ var app = new Vue({
                     }
                     const sumtotals = this.order.map(element => element.totalp).reduce((a, b) => a + b, 0);
                     this.totalsales = new Intl.NumberFormat('es-ES', {style: 'currency',currency: 'COP', minimumFractionDigits: 0}).format(sumtotals);
-                    
-                    alert('Tu pedido se está preparando, lo recibirás muy pronto');
+                    console.table(this.order);
+                    alert('Your purchase order has been successfully processed');
                     this.cancel();
                 }
             }else{
@@ -276,7 +249,6 @@ var app = new Vue({
                 this.cart.splice(0, this.cart.length);
                 const total = this.cart.map(element => element.price * element.qty).reduce((a, b) => a + b, 0);
                 this.totalCart = new Intl.NumberFormat('es-ES', {style: 'currency',currency: 'COP', minimumFractionDigits: 0}).format(total);
-                //alert('Su pedido fue cancelado satisfactoriamente');
                 this.products.forEach(element => element.order_amount = 1);
                 this.fcartN = '';
                 this.ptrigger = 0;
