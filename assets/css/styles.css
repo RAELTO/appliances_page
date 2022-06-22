@@ -62,6 +62,17 @@ header{
     color: #000;
 }
 
+#products .fbtn{
+    border: 2px solid #000;
+    color: #000;
+    background-color: #fff;
+}
+
+#products .fbtn:hover{
+    color: #fff;
+    background-color: #000;
+}
+
 #products hr{
     color: #000;
 }
@@ -140,13 +151,6 @@ header{
     border: none;
 }
 
-#login .modal-body{
-    display:flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    
-}
-
 #modals .modal-content{
     border: none;
 }
@@ -200,36 +204,17 @@ header{
 
 #modals .modal-footer .cancel{
     margin: auto;
-    background-image: url("../images/cancel-btn.png");
-    background-color: transparent;
+    padding: 14px 80px 14px 65px;
     border: 0;
-    padding: 14px 80px 14px 75px;
-    background-repeat: no-repeat;
     cursor: pointer;
-    color: #000;
+    background-color: #7b0a0a;
+    color: #fff;
     transition: 0.5s all ease;
 }
 
 #modals .modal-footer .cancel:hover{
-    background-image: url("../images/cancel-btn-hover.png");
+    background-color: #fd1e1e;
     color: #fff;
-}
-
-#modals .modal-footer .back{
-    margin: auto;
-    background-image: url("../images/back-btn.png");
-    background-color: transparent;
-    border: 0;
-    padding: 14px 80px 14px 80px;
-    background-repeat: no-repeat;
-    cursor: pointer;
-    color: #000;
-    transition: 0.5s all ease;
-}
-
-#modals .modal-footer .back:hover{
-    background-image: url("../images/buy-btn-hover.png");
-    color: #000;
 }
 
 #modals .modal-body span{
@@ -256,20 +241,20 @@ header{
     border-radius: 10px;
 }
 
-#carrito .modal-body h4{
+#cart .modal-body h4{
     font-weight: bold;
 }
 
-#carrito tbody img{
+#cart tbody img{
     width: 40px;
     height: 40px;
 }
 
-#carrito tbody img:hover{
+#cart tbody img:hover{
     border: 2px solid #E29D16;
 }
 
-#carrito tbody td{
+#cart tbody td{
     padding: 10px;
 }
 

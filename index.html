@@ -35,7 +35,7 @@
                                     <a class="nav-link active" aria-current="page" href="#allpr">Products</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a @click="cartClick" class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#carrito">Cart <i class="fas fa-shopping-cart"></i> <strong v-text="fcartN" class="text-light"></strong></a>
+                                    <a @click="cartClick" class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#cart">Cart <i class="fas fa-shopping-cart"></i> <strong v-text="fcartN" class="text-light"></strong></a>
                                 </li>
                             </ul>
                         </div>
@@ -82,7 +82,7 @@
             <section id="floating-cart-btn">
                 <div class="btn-container fixed-bottom">
                     <div class="cart-float-btn">
-                        <a @click="cartClick" href="#" class="floating-cart text-center" data-bs-toggle="modal" data-bs-target="#carrito"><i class="fas fa-shopping-cart"></i>  <strong v-text="fcartN" class="text-danger"></strong></a>
+                        <a @click="cartClick" href="#" class="floating-cart text-center" data-bs-toggle="modal" data-bs-target="#cart"><i class="fas fa-shopping-cart"></i>  <strong v-text="fcartN" class="text-danger"></strong></a>
                     </div>
                 </div>
             </section>
@@ -96,15 +96,18 @@
                             <h1 class="menu-title">Our Products</h1>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row"> <!--Filter -->
                         <div class="col-lg-6 text-center">
-                            <select class="form-select" aria-label="Default select example">
+                            <select class="form-select" aria-label="Default select example" v-model="foption">
                                 <option selected>Filter</option>
                                 <option value="1">One</option>
                                 <option value="2">Two</option>
                                 <option value="3">Three</option>
                                 <option value="4">Four</option>
                             </select>
+                        </div>
+                        <div class="col-lg-3">
+                            <button @click="filter" class="btn btn-dark fbtn">Apply Filter</button>
                         </div>
                     </div>
                     <!-- products & modals-->
@@ -165,7 +168,7 @@
             <section id="modals" v-if="products.length"> 
 
                 <!-- Modal Carrito -->
-                <div class="modal fade" id="carrito" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="cart" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" v-if="ptrigger === 0">
                         <div class="modal-content">
                             <div class="modal-header text-center">
@@ -202,8 +205,8 @@
                                 <h4 class="text-center"><strong>TOTAL:</strong> <span><strong v-text="totalCart">$0.000</strong></span></h4>
                             </div>
                             <div class="modal-footer">
-                                <button @click="payments" type="button"><strong>Ir a pagar</strong></button>
-                                <button @click="cancel" type="button" class="cancel" data-bs-dismiss="modal" aria-label="Close"><strong>Cancelar</strong></button>
+                                <button @click="payments" type="button" class="btn btn-dark"><strong>Ir a pagar</strong></button>
+                                <button @click="cancel" type="button" class="cancel btn btn-danger" data-bs-dismiss="modal" aria-label="Close"><strong>Cancelar</strong></button>
                             </div>
                         </div>
                     </div>
@@ -226,9 +229,9 @@
                                 <h4 class="text-center"><strong>TOTAL A PAGAR: </strong><span><strong v-text="totalCart"></strong></span></h4>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" @click="sendorder" v-if="paymethod.length <= 0"><strong>Pagar Pedido</strong></button>
-                                <button type="button" @click="sendorder" data-bs-dismiss="modal"  aria-label="close" v-else><strong>Pagar Pedido</strong></button>
-                                <button type="button" @click="cancelpurchase" class="cancel"><strong>Cancelar</strong></button>
+                                <button type="button" @click="sendorder" class="btn btn-dark" v-if="paymethod.length <= 0"><strong>Pagar Pedido</strong></button>
+                                <button type="button" @click="sendorder" class="btn btn-dark" data-bs-dismiss="modal"  aria-label="close" v-else><strong>Pagar Pedido</strong></button>
+                                <button type="button" @click="cancelpurchase" class="cancel btn btn-danger"><strong>Cancelar</strong></button>
                             </div>
                         </div>
                     </div>

@@ -63,7 +63,7 @@ var app = new Vue({
                 desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat amet`,
                 descmodal: `Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                 Placeat voluptatibus sapiente aliquid deleniti, rem nisi!`,
-                price: 25000,
+                price: 350_000,
                 modal_id: 'fry1',
                 modalw: '#fry1',
                 order_amount: 1,
@@ -75,7 +75,7 @@ var app = new Vue({
                 desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat amet`,
                 descmodal: `Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                 Placeat voluptatibus sapiente aliquid deleniti, rem nisi!`,
-                price: 25000,
+                price: 685_000,
                 modal_id: 'fry2',
                 modalw: '#fry2',
                 order_amount: 1,
@@ -87,7 +87,7 @@ var app = new Vue({
                 desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat amet`,
                 descmodal: `Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                 Placeat voluptatibus sapiente aliquid deleniti, rem nisi!`,
-                price: 25000,
+                price: 2_300_000,
                 modal_id: 'tv1',
                 modalw: '#tv1',
                 order_amount: 1,
@@ -99,16 +99,11 @@ var app = new Vue({
                 desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat amet`,
                 descmodal: `Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                 Placeat voluptatibus sapiente aliquid deleniti, rem nisi!`,
-                price: 25000,
+                price: 2_500_000,
                 modal_id: 'tv2',
                 modalw: '#tv2',
                 order_amount: 1,
             },
-        ],
-        employees: [
-            {id: '1234', charge: 'Cocinero', password: '12345678'},
-            {id: '5678', charge: 'Mesero', password: '87654321'},
-            {id: '3333', charge: 'Admin', password: '3333'},
         ],
         cart: [],//empty array that will store the client's orders
         order: [],
@@ -117,8 +112,7 @@ var app = new Vue({
         fcartN: '',
         modaltrigger: 0,
         logspan: 0,
-        userinput: '',
-        passinput: '',
+        foption: '',
         ptrigger: 0,
         paymethod: '',
         totalsales: 0,
@@ -175,23 +169,23 @@ var app = new Vue({
 
                 this.fcartN = this.cart.length;
 
-                alert(`Se agregaron ${item.order_amount} ${item.name} al carrito`);
+                alert(`${item.order_amount} ${item.name} were added to cart`);
                 item.order_amount = 1;
 
             }else{
-                alert('Debe agregar mínimo un producto');
+                alert('You must add at least one product');
             }
         },
         payments(){
             if (this.cart.length > 0) {
                 this.ptrigger = 1;
             }else{
-                alert('El carrito está vacío, por favor agregue al menos un producto');
+                alert('The cart is empty, please add at leat one product');
             }
             
         },
         cancelpurchase(){
-            if (confirm("¿Esta seguro de que desea cancelar su compra?") === true){
+            if (confirm("Do you want to cancel your purchase?") === true){
                 /*const totalc = this.cart.map(element => element.price * element.qty).reduce((a, b) => a + b, 0);
                 this.order.push({
                     id: this.order.length + 1,
@@ -286,7 +280,7 @@ var app = new Vue({
             }
         },
         filter(){
-            console.log();
+
         }
     }
 });
