@@ -99,13 +99,23 @@
                     <div class="row"> <!--Filter -->
                         <div class="col-lg-6 col-md-4 text-center">
                             <h4>Filters</h4>
-                            <select class="form-select"  v-model="foption" @change="filter">
+                            <select class="form-select" v-model="foption" @change="filter">
                                 <option value="all">Show all</option>
                                 <option value="tvs">TV</option>
                                 <option value="frdg">Fridges</option>
                                 <option value="wm">Washing Machines</option>
                                 <option value="fry">Fryers</option>
                             </select>
+                        </div>
+                        <div class="col-lg-6 col-md-4 text-center mt-1">
+                            <label for="exampleDataList" class="form-label">Search</label>
+                            <input v-model="soption" @change="filter" class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search..." v-model="foption">
+                            <datalist id="datalistOptions">
+                                <option value="Fridges">
+                                <option value="TV">
+                                <option value="Washing Machine">
+                                <option value="Fryers">
+                            </datalist>
                         </div>
                     </div>
                     <!-- products & modals-->
