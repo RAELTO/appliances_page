@@ -133,7 +133,7 @@
                                             <input type="number" min="0" max="20" class="form-control" placeholder="Cantidad" v-model.number="item.order_amount">
                                             <span class="input-group-text bg-dark"><button @click="plusbtn(item)" type="button" class="btn btn-dark"><i class="fas fa-plus"></i></button></span>
                                         </div>
-                                        <div class="btnadd"><button @click="addToCart(item)" type="button" class="col-12 btn btn-dark">Agregar</button></div>
+                                        <div class="btnadd"><button @click="addToCart(item)" type="button" class="col-12 btn btn-dark">Add To Cart</button></div>
                                     </div>
                                 </div>
                             </div>
@@ -158,7 +158,7 @@
                                                 </div>
                                             </div>
                                             <div class="modal-footer">
-                                                <button @click="addToCart(item)" type="button" class="btn btn-dark"><strong>AGREGRAR</strong></button>
+                                                <button @click="addToCart(item)" type="button" class="btn btn-dark"><strong>Add To Cart</strong></button>
                                             </div>
                                         </div>
                                     </div>
@@ -180,20 +180,20 @@
                     <div class="modal-dialog" v-if="ptrigger === 0">
                         <div class="modal-content">
                             <div class="modal-header text-center">
-                                <h5 class="modal-title text-center" id="exampleModalLabel">Carrito</h5>
+                                <h5 class="modal-title text-center" id="exampleModalLabel">Cart</h5>
                                 <button type="button" class="btn btn-dark" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
                             </div>
                             <div class="modal-body">
-                                <h4>Tu Pedido:</h4>
+                                <h4>Your Buy Order:</h4>
                                 <div class="table-responsive">
                                     <table class="table table-dark table-hover">
                                         <thead class="text-center">
                                             <tr>
-                                                <th>Producto</th>
-                                                <th>Nombre</th>
-                                                <th>cantidad</th>
-                                                <th>Precio Unitario</th>
-                                                <th>Eliminar</th>
+                                                <th>Product</th>
+                                                <th>Name</th>
+                                                <th>Amount</th>
+                                                <th>Price by unit</th>
+                                                <th>Delete</th>
                                             </tr>
                                         </thead>
                                         <tbody class="text-center"  v-if="cart.length">
@@ -206,26 +206,26 @@
                                             </tr>
                                         </tbody>
                                         <tbody v-else>
-                                            <td colspan="5" class="text-center">No hay pedidos agregados</td>
+                                            <td colspan="5" class="text-center">There are not products in cart</td>
                                         </tbody>
                                     </table>
                                 </div>
                                 <h4 class="text-center"><strong>TOTAL:</strong> <span><strong v-text="totalCart">$0.000</strong></span></h4>
                             </div>
                             <div class="modal-footer">
-                                <button @click="payments" type="button" class="btn btn-dark"><strong>Ir a pagar</strong></button>
-                                <button @click="cancel" type="button" class="cancel btn btn-danger" data-bs-dismiss="modal" aria-label="Close"><strong>Cancelar</strong></button>
+                                <button @click="payments" type="button" class="btn btn-dark"><strong>Go to Payments</strong></button>
+                                <button @click="cancel" type="button" class="cancel btn btn-danger" data-bs-dismiss="modal" aria-label="Close"><strong>Cancel</strong></button>
                             </div>
                         </div>
                     </div>
                     <div id="pago" class="modal-dialog" v-else>
                         <div class="modal-content">
                             <div class="modal-header text-center">
-                                <h5 class="modal-title text-center" id="exampleModalLabel">Pagos</h5>
+                                <h5 class="modal-title text-center" id="exampleModalLabel">Payments</h5>
                                 <button type="button" class="btn btn-dark" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
                             </div>
                             <div class="modal-body">
-                                <h4 class="text-center"><strong>SELECCIONA TU MÉTODO DE PAGO</strong></h4>
+                                <h4 class="text-center"><strong>CHOOSE YOUR PAYMENT METHOD</strong></h4>
                                 <div class="row text-center">
                                     <div class="col-12 form-check form-check-inline mt-2 mb-2 mw-100">
                                         <label class="radio-inline"> <input v-model="paymethod" type="radio" name="conv" id="conv" value="tarjeta" checked><img src="./assets/images/nequi.png" alt="" class="ms-2"></label>
@@ -234,12 +234,12 @@
                                         <label class="radio-inline"> <input v-model="paymethod" type="radio" name="conv" id="conv" value="nequi"><img src="./assets/images/credit.png" alt="" class="ms-2"></label>
                                     </div>
                                 </div>
-                                <h4 class="text-center"><strong>TOTAL A PAGAR: </strong><span><strong v-text="totalCart"></strong></span></h4>
+                                <h4 class="text-center"><strong>TOTAL TO PAY: </strong><span><strong v-text="totalCart"></strong></span></h4>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" @click="sendorder" class="btn btn-dark" v-if="paymethod.length <= 0"><strong>Pagar Pedido</strong></button>
-                                <button type="button" @click="sendorder" class="btn btn-dark" data-bs-dismiss="modal"  aria-label="close" v-else><strong>Pagar Pedido</strong></button>
-                                <button type="button" @click="cancelpurchase" class="cancel btn btn-danger"><strong>Cancelar</strong></button>
+                                <button type="button" @click="sendorder" class="btn btn-dark" v-if="paymethod.length <= 0"><strong>Pay Order</strong></button>
+                                <button type="button" @click="sendorder" class="btn btn-dark" data-bs-dismiss="modal"  aria-label="close" v-else><strong>Pay Order</strong></button>
+                                <button type="button" @click="cancelpurchase" class="cancel btn btn-danger"><strong>Cancel</strong></button>
                             </div>
                         </div>
                     </div>

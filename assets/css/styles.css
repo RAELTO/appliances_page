@@ -177,7 +177,8 @@ header{
 
 #modals .modal-footer button{
     margin: auto;
-    padding: 14px 80px 14px 65px;
+    margin-top: 10px;
+    padding: 14px 45px;
     border: 1px solid #fff;
     cursor: pointer;
     background-color: #191919;
@@ -193,7 +194,8 @@ header{
 
 #modals .modal-footer .cancel{
     margin: auto;
-    padding: 14px 80px 14px 65px;
+    margin-top: 10px;
+    padding: 14px 45px;
     border: 0;
     cursor: pointer;
     background-color: #7b0a0a;
