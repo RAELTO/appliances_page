@@ -261,28 +261,16 @@ var app = new Vue({
             }
         },
         filter(){
-            this.soption = this.soption.toLowerCase();
-
-            if (this.soption == 'fridge' || this.soption == 'fridges' || this.soption == 'freezer' || this.soption == 'freezers') {
-                this.foption = 'frdg';
-            }else if(this.soption === 'tv' || this.soption === 'television' || this.soption === 'tvs' || this.soption === 'tele'){
-                this.foption = 'tvs';
-            }else if(this.soption === 'fryer' || this.soption === 'fry' || this.soption === 'fryers'){
-                this.foption = 'fry';
-            }else if(this.soption === 'washing' || this.soption === 'washing machine' || this.soption === 'wash' || this.soption === 'washing machines'){
-                this.foption = 'wm';
-            }
-
             if (this.foption === 'all') {
                 this.fproducts = this.products;
-            }else if (this.foption === 'wm' || this.foption === 'frdg' || this.foption === 'tvs' || this.foption === 'fry') {
+            }else{
                 const result = this.products.filter(e => e.category === this.foption);
                 this.fproducts = result;
-            }else{
-                alert('Products not found');
-                this.fproducts = this.products;
             }
             
+        },
+        search(){
+            this.fproducts = this.products.filter(e => e.name.toLowerCase().includes(this.soption));
         }
     },
     beforeMount(){
