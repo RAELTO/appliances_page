@@ -120,7 +120,7 @@
                     </div>
                     <!-- products & modals-->
                     <div class="row" v-if="products.length">
-                        <div class="col-md-6 col-lg-3 mt-3 mb-4" v-for="(item, index) in fproducts" :key="item.id">
+                        <div class="col-md-6 col-lg-3 mt-3 mb-4" v-for="(item, index) in fproducts" :key="item.id" v-if="fproducts.length > 0">
                             <div class="card">
                                 <img :src="item.img" class="card-img-top" alt="pr1" data-bs-toggle="modal" :data-bs-target="item.modalw">
                                 <div class="card-body">
@@ -166,6 +166,16 @@
                             </div>
                             <!-- /products & modals -->
                         </div>
+                        <div class="col-lg-4" v-if="fproducts.length === 0"></div>
+                        <div class="col-lg-4" v-if="fproducts.length === 0">
+                            <div class="card bg-dark text-white mt-3 mb-3">
+                                <img src="./assets/images/notfound.png" class="card-img" alt="404">
+                                <div class="card-img-overlay">
+                                    <h1 class="card-title">The product was not found</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4" v-if="fproducts.length === 0"></div>
                     </div>
                     <!-- /products -->
                 </div>
